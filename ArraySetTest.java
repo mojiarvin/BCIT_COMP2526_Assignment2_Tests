@@ -521,4 +521,17 @@ public class ArraySetTest {
         assertTrue(testArraySet.removeAll(toRemove));
         assertEquals(0, testArraySet.size());
     }
+
+    @Test
+    public void testAddAll() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        for (int i = 0; i < SMALL; i++) {
+            arrayList.add(i);
+        }
+
+        testArraySet.addAll(arrayList);
+        assertTrue(testArraySet.containsAll(arrayList));
+        assertEquals(10, arrayList.size());
+    }
 }
